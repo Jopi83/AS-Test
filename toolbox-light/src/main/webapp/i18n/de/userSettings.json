@@ -1,0 +1,30 @@
+{
+    "toolboxApp": {
+        "userSettings" : {
+            "home": {
+                "title": "User Settings",
+                "createLabel": "User Settings erstellen",
+                "createOrEditLabel": "User Settings erstellen oder bearbeiten",
+                "search": "Suche nach User Settings"
+            },
+            "created": "User Settings erstellt mit ID {{ param }}",
+            "updated": "User Settings aktualisiert mit ID {{ param }}",
+            "deleted": "User Settings gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll User Settings {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "User Settings"
+            },
+            "userLogin": "User Login",
+            "settingsRealm": "Settings Realm",
+            "settingsKey": "Settings Key",
+            "settingsValue": "Settings Value"
+        },
+        "settings" : {
+            "settings": "Einstellungen",
+            "activeTableColumns": "Aktive Tabellenspalten",
+            "disabledTableColumns": "Deaktivierte Tabellenspalten"
+        }
+    }
+}

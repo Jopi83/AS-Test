@@ -1,0 +1,16 @@
+{
+    "error": {
+        "title": "Fehlerseite!",
+        "http": {
+            "400": "Bad request.",
+            "403": "Sie haben nicht die nötigen Berechtigungen diese Seite anzuzeigen.",
+            "405": "Die von Ihnen verwendete HTTP-Methode wird für diese URL nicht unterstützt.",
+            "500": "Interner Serverfehler."
+        },
+        "concurrencyFailure": "Ein anderer Benutzer hat diesen Datensatz zur gleichen Zeit wie Sie geändert. Ihre Änderungen wurden abgelehnt.",
+        "dataIntegrityViolation": {
+            "delete": "Dieser Datensatz ist mit anderen Datensätzen verknüpft und kann erst gelöscht werden, wenn alle abhängigen Datensätze gelöscht wurden."
+        },
+        "validation": "Validierungsfehler auf dem Server."
+    }
+}

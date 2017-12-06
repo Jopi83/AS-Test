@@ -1,0 +1,13 @@
+<div class="app-container"
+     [ngClass]="[isAuthenticated() && !sidebarIsCollapsed ? 'expanded' : 'collapsed', isAuthenticated() ? 'authenticated' : 'unauthenticated', sidebarIsFixed ? 'sidebar-fixed' : 'sidebar-fluid']">
+    <router-outlet name="navbar"></router-outlet>
+    <div id="page-wrapper" class="container-fluid">
+        <div [ngClass]="isAuthenticated() ? 'card jh-card' : ''">
+            <router-outlet></router-outlet>
+            <router-outlet name="popup"></router-outlet>
+        </div>
+    </div>
+    <div *ngIf="isAuthenticated()" class="footer container-fluid">
+        <jhi-footer></jhi-footer>
+    </div>
+</div>

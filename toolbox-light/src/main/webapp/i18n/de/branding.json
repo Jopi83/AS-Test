@@ -1,0 +1,22 @@
+{
+    "toolboxApp": {
+        "branding" : {
+            "home": {
+                "title": "Brandings",
+                "createLabel": "Branding erstellen",
+                "createOrEditLabel": "Branding erstellen oder bearbeiten",
+                "search": "Suche nach Branding"
+            },
+            "created": "Branding erstellt mit ID {{ param }}",
+            "updated": "Branding aktualisiert mit ID {{ param }}",
+            "deleted": "Branding gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Branding \"{{ id }}\" wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Branding"
+            },
+            "name": "Name"
+        }
+    }
+}

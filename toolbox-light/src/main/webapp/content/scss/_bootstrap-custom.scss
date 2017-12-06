@@ -1,0 +1,82 @@
+/* ==========================================================================
+Modal: _modal.scss
+========================================================================== */
+.modal-full-width {
+    .modal-lg {
+        max-width: calc(100% - 40px);
+    }
+}
+
+.modal-header {
+    padding: 10px 15px;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        margin: 20px auto;
+    }
+}
+
+/* ==========================================================================
+Table: _tabeles.scss
+========================================================================== */
+.table-responsive, .table-striped {
+    overflow: auto;
+    width: 100%;
+    th, td {
+        width: 1rem;
+    }
+    thead th {
+        white-space: nowrap;
+    }
+    tbody {
+        tr.active, tr.odd.active {
+            background-color: rgba(0, 148, 71, 0.15);
+            border-left: 9px solid #009447;
+        }
+    }
+}
+
+.fa-sort {
+    visibility: hidden;
+    &.fa-sort-asc, &.fa-sort-desc {
+        visibility: visible;
+        vertical-align: middle;
+    }
+    &.fa-sort-desc {
+        vertical-align: top;
+    }
+}
+
+/* ==========================================================================
+Buttons: _buttons.scss
+========================================================================== */
+.btn {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/* ==========================================================================
+Type: _type.scss
+========================================================================== */
+h2 {
+    line-height: 2rem;
+}
+
+/* ==========================================================================
+Forms: _forms.scss
+========================================================================== */
+.form-control-label {
+    font-weight: bold;
+}
+
+/* ==========================================================================
+Polyfills for deprecated Bootstrap 4 Alpha styles
+========================================================================== */
+
+@media (max-width: 992px) {
+    .hidden-md-down {
+        display: none;
+    }
+}

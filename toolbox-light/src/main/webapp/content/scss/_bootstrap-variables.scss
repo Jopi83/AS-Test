@@ -1,0 +1,71 @@
+/*
+* Bootstrap overrides https://v4-alpha.getbootstrap.com/getting-started/options/
+* All values defined in bootstrap source
+* https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss can be overwritten here
+* Make sure not to add !default to values here
+*/
+
+// Responsive:
+// Breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+// Colors:
+// Grayscale and brand colors for use across Bootstrap.
+
+$brand-primary:             #0089ca;
+$brand-success:             #009f62;
+$brand-info:                #17a2b8;
+$brand-warning:             #ffc107;
+$brand-danger:              #df0029;
+
+$blue:    #0089ca;
+$red:     #df0029;
+$green:   #009f62;
+
+// Options:
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-rounded:            true;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        true;
+$enable-hover-media-query:  false;
+$enable-grid-classes:       true;
+$enable-print-styles:       true;
+
+// Components:
+// Define common padding and border radius sizes and more.
+
+$border-radius:          0.15rem;
+$border-radius-lg:       .125rem;
+$border-radius-sm:       .1rem;
+
+// Body:
+// Settings for the `<body>` element.
+
+$body-bg:                   #ffffff;
+
+// Typography:
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:    Arial, sans-serif;
+$font-size-base:            .85rem;
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+
+// Table:
+$table-cell-padding: 0.6rem;
+
+// Grid columns:
+// Set the number of columns and specify the width of the gutters.
+$grid-gutter-width: 20px !default;

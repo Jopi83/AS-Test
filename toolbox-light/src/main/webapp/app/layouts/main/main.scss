@@ -1,0 +1,47 @@
+
+$main-padding: 10px;
+$sidebar-width-collapsed: 60px;
+$sidebar-width-uncollapsed: 250px;
+$breakpoint-sidebar-mobile: 576px;
+
+#page-wrapper {
+    margin-bottom: 50px;
+    padding-left: $main-padding;
+    transition: padding 0.15s;
+    will-change: padding;
+    @media (min-width: $breakpoint-sidebar-mobile) {
+        padding-left: $sidebar-width-collapsed + $main-padding;
+    }
+    .expanded.sidebar-fixed & {
+        @media (min-width: 768px) {
+            padding-left: $sidebar-width-uncollapsed + $main-padding;
+        }
+    }
+    .unauthenticated & {
+        padding-left: $main-padding;
+    }
+}
+.app-container {
+    padding-top: $sidebar-width-collapsed;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    color: #9c9c9c;
+    font-size: 0.8rem;
+    padding-left: $main-padding;
+    transition: padding 0.15s;
+    will-change: padding;
+    @media (min-width: $breakpoint-sidebar-mobile) {
+        padding-left: $sidebar-width-collapsed + $main-padding;
+    }
+    .expanded.sidebar-fixed & {
+        @media (min-width: 768px) {
+            padding-left: $sidebar-width-uncollapsed + $main-padding;
+        }
+    }
+    .unauthenticated & {
+        padding-left: $main-padding;
+    }
+}

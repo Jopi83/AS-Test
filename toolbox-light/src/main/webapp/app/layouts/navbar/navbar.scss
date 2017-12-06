@@ -1,0 +1,335 @@
+/* ==========================================================================
+Navbar General
+========================================================================== */
+$navbar-color: #fff;
+$navbar-color-em: rgba(255, 255, 255, 0.75);;
+$navbar-color-bg: #000;
+
+$navbar-color-title: #000;
+
+$navbar-color-navlink: rgba(255, 255, 255, 0.5);
+$navbar-color-navlink-hover: rgba(255, 255, 255, 0.75);
+$navbar-color-navlink-active: rgba(255, 255, 255, 1);
+
+$navbar-color-toggle: $navbar-color-em;
+$navbar-color-toggle-hover: $navbar-color-navlink-active;
+
+$navbar-top-height: 60px;
+
+$sidebar-color: $navbar-color;
+$sidebar-color-bg: $navbar-color-bg;
+$sidebar-color-bg-level2: #212326;
+
+$sidebar-color-navlink: $navbar-color-navlink;
+$sidebar-color-navlink-hover: $navbar-color-navlink-hover;
+$sidebar-color-navlink-active: $navbar-color-navlink-active;
+
+$sidebar-level1-height: 46px;
+$sidebar-level2-height: 38px;
+$sidebar-width-collapsed: 60px;
+$sidebar-width-uncollapsed: 250px;
+$sidebar-transition-time: 0.15s;
+
+$logo-color-bg: $sidebar-color-bg;
+
+$breakpoint-topbar-mobile: 576px;
+$breakpoint-sidebar-mobile: $breakpoint-topbar-mobile;
+$breakpoint-menuitem-text-visible: 992px;
+
+.navbar {
+    display: block;
+    z-index: 1001;
+}
+
+.jh-navbar-toggler, .jh-sidebar-toggler {
+    color: $navbar-color-toggle;
+    font-size: 1.1em;
+    padding: 0 20px;
+    vertical-align: middle;
+    outline: none;
+    &:hover {
+        color: $navbar-color-toggle-hover;
+    }
+}
+
+/* ==========================================================================
+Navbar Logo
+========================================================================== */
+.navbar-brand {
+    font-size: 1.125rem;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+    width: 100%;
+    outline: none;
+    .navbar-title {
+        margin-left: -5px;
+        color: $navbar-color-title;
+        :host-context(.unauthenticated) & {
+            color: $navbar-color;
+        }
+    }
+}
+.logo {
+    color: $navbar-color;
+    .logo-img {
+        background: url("../../../content/images/logo-axelspringer-reverse.png") no-repeat center center;
+        background-size: contain;
+        display: inline-block;
+        margin: 0 20px 0 20px;
+        height: 45px;
+        vertical-align: middle;
+        width: 20px;
+        :host-context(.unauthenticated) & {
+            background: url("../../../content/images/logo-axelspringer.png") no-repeat center center;
+            background-size: contain;
+            display: inline-block;
+            margin: 0 20px 0 20px;
+            height: 45px;
+            vertical-align: middle;
+            width: 20px;
+        }
+    }
+}
+
+div.logo {
+    display: none;
+    width: 55px;
+    @media (max-width: $breakpoint-topbar-mobile) {
+        display: inline-block;
+        :host-context(.expanded) &, :host-context(.unauthenticated) & {
+            display: none;
+        }
+        .logo-img {
+            background: url("../../../content/images/logo-axelspringer.png") no-repeat center center;
+            background-size: contain;
+            display: inline-block;
+            margin: 0 20px 0 20px;
+            height: 45px;
+            vertical-align: middle;
+            width: 20px;
+        }
+    }
+}
+
+/* ==========================================================================
+Navbar Top
+========================================================================== */
+.navbar-top {
+    background-color: $navbar-color-bg;
+    height: $navbar-top-height;
+    padding: 5px 1em 5px $sidebar-width-collapsed;
+    transition: padding $sidebar-transition-time;
+
+    @media (max-width: $breakpoint-topbar-mobile) {
+        padding-left: 0;
+    }
+    :host-context(.expanded) & {
+        padding-left: $sidebar-width-uncollapsed;
+    }
+    &.navbar-fixed-top {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    .navbar-brand {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    ul.navbar-nav {
+        padding: 0.5em;
+        .nav-item {
+            margin-left: 1.5rem;
+            &.active {
+                a.nav-link {
+                    color: $navbar-color-navlink-active;
+                }
+            }
+            a.nav-link {
+                font-weight: 400;
+                color: $navbar-color-navlink;
+                &:hover, &:focus {
+                    color: $navbar-color-navlink-hover;
+                }
+                i {
+                    + span {
+                        @media (max-width: $breakpoint-menuitem-text-visible) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Profil Image
+    .profile-image {
+        margin: -10px 0px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+
+    // Bootstrap Dropdown
+    .dropdown-item {
+        outline: none;
+        &.active, &.active:focus, &.active:hover {
+            background-color: $navbar-color-bg;
+        }
+    }
+    .dropdown-toggle::after {
+        margin-left: 0.15em;
+        @media (max-width: $breakpoint-topbar-mobile) {
+            display: none;
+        }
+    }
+}
+
+/* ==========================================================================
+Sidebar
+========================================================================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.15s;
+    z-index: 1002;
+
+    :host-context(.unauthenticated) & {
+        display: none;
+    }
+
+    @media (min-width: $breakpoint-sidebar-mobile) {
+        width: $sidebar-width-collapsed;
+    }
+    :host-context(.expanded) & {
+        width: $sidebar-width-uncollapsed;
+    }
+    &.sidebar-dark {
+        background-color: $sidebar-color-bg;
+    }
+    .navbar.navbar-main {
+        padding: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+
+        .navbar-header {
+            background-color: #ffffff;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+        .navbar-nav {
+            height: calc(100vh - 80px);
+            margin: $navbar-top-height 0 0 0;
+            padding-top: 10px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 100%;
+
+            .nav-item {
+                a.nav-sub-trigger {
+                    color: $sidebar-color-navlink;
+                    display: block;
+                    height: $sidebar-level1-height;
+                    line-height: $sidebar-level1-height;
+                    padding: 0 10px 0 10px;
+                    position: relative;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    outline: none;
+                    &:focus, &:hover {
+                        color: $sidebar-color-navlink-hover;
+                        text-decoration: none;
+                    }
+                    &.dropdown-toggle::after {
+                        display: block;
+                        position: absolute;
+                        right: 1em;
+                        top: ($sidebar-level1-height/2 - 3);
+                        opacity: 0;
+                        transition: opacity 0.15s;
+                        :host-context(.expanded) & {
+                            opacity: 1;
+                        }
+                    }
+                    > span {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        i {
+                            display: inline-block;
+                            font-size: 1.1em;
+                            margin-left: 0;
+                            text-align: center;
+                            vertical-align: middle;
+                            width: 38px;
+                        }
+                        > span {
+                            display: none;
+                            padding-left: 9px;
+                            vertical-align: middle;
+                            white-space: nowrap;
+                            :host-context(.expanded) & {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    a.nav-sub-trigger {
+                        color: $sidebar-color-navlink-active;
+                    }
+                }
+
+                .nav-sub-target {
+                    overflow: hidden;
+                    .sub-menu {
+                        background-color: $sidebar-color-bg-level2;
+                        border: none;
+                        border-radius: 0;
+                        overflow: hidden;
+                        margin: 0;
+                        padding: 0;
+                        :host-context(.collapsed) & {
+                            display: none;
+                        }
+                        li {
+                            padding: 0 6px;
+                            > a {
+                                color: #fff;
+                                display: block;
+                                height: 38px;
+                                line-height: 38px;
+                                white-space: nowrap;
+                                padding: 0 10px 0 20px;
+                                &:hover, &:focus {
+                                    color: #0089ca;
+                                    background: transparent;
+                                    text-decoration: none;
+                                }
+                                &.active {
+                                    color: #000;
+                                    background-color: #fff;
+                                    padding-left: 20px;
+                                }
+                                span {
+                                    display: inline-block;
+                                    padding-left: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

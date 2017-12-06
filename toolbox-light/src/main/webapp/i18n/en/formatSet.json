@@ -1,0 +1,22 @@
+{
+    "toolboxApp": {
+        "formatSet" : {
+            "home": {
+                "title": "Format Sets",
+                "createLabel": "Create a new Format Set",
+                "createOrEditLabel": "Create or edit a Format Set",
+                "search": "Search for Format Set"
+            },
+            "created": "A new Format Set is created with identifier {{ param }}",
+            "updated": "A Format Set is updated with identifier {{ param }}",
+            "deleted": "A Format Set is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Format Set \"{{ id }}\"?"
+            },
+            "detail": {
+                "title": "Format Set"
+            },
+            "name": "Name"
+        }
+    }
+}

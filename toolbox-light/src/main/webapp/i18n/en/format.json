@@ -1,0 +1,28 @@
+{
+    "toolboxApp": {
+        "format" : {
+            "home": {
+                "title": "Formats",
+                "createLabel": "Create a new Format",
+                "createOrEditLabel": "Create or edit a Format",
+                "search": "Search for Format"
+            },
+            "created": "A new Format is created with identifier {{ param }}",
+            "updated": "A Format is updated with identifier {{ param }}",
+            "deleted": "A Format is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Format \"{{ id }}\"?"
+            },
+            "detail": {
+                "title": "Format"
+            },
+            "name": "Name",
+            "size1": "Size 1",
+            "size2": "Size 2",
+            "size3": "Size 3",
+            "size4": "Size 4",
+            "product": "Product",
+            "formatSet": "Format Set"
+        }
+    }
+}

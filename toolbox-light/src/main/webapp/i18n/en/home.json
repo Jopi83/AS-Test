@@ -1,0 +1,8 @@
+{
+    "home": {
+        "title": "AdSolutions Toolbox",
+        "logged": {
+            "message": "You are logged in as user \"{{username}}\"."
+        }
+    }
+}
