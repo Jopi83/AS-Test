@@ -7,6 +7,7 @@ import { JhiLanguageService } from 'ng-jhipster';
 import { JhiLanguageHelper} from '../../shared';
 
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 
 import {
     trigger,

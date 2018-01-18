@@ -7,6 +7,7 @@ export class PaginationConfig {
     // tslint:disable-next-line: no-unused-variable
     constructor(private config: NgbPaginationConfig) {
         config.boundaryLinks = true;
+        config.rotate = true;
         config.maxSize = 5;
         config.pageSize = ITEMS_PER_PAGE;
         config.size = 'sm';
