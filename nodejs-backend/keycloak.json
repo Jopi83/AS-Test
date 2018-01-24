@@ -1,0 +1,9 @@
+{
+  "realm" : "jhipster",
+  "clientId": "web_app",
+  "realm-public-key" : "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqVoQqOeF6MC6jV8gpFoZ58AUBvWP4o24u0M2Ma0EcPzD13OUagwg639kH3VSENq540nDRrbTnT+NHMavvanG0rQJBhjTUtSJod+FX/kKo35nz6OX8ZGkM4lhOx4WsPjNcs0IskED34gygagBRjcdUhOVqxIsmD/OHj+rsQQGgJH0itxqorX1aNh8xRcG58mJnfr7MFuHkHFBkFlvOHkxPRd0UvgfSAmQPjuMnoMuOolANvZbMnOqutyldbAnjU0cBbdzgBN66/4RmXU3ND8LeAmq7sNbnoOSRvPNQoJraKt4K6wHcl9qhH7H8BcM2s/n503GNbe/5hbnIhkR+cUWbwIDAQAB",
+  "auth-server-url" : "http://localhost:9080/auth",
+  "ssl-required" : "external",
+  "resource" : "web_app",
+  "bearer-only": true
+}

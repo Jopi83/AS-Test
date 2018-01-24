@@ -3,13 +3,13 @@ import {RouterModule} from '@angular/router';
 
 import {ToolboxSharedModule} from '../../shared';
 
-import {HeaderModule, SERVER_URL} from 'external-app'
+import {SampleModule, SERVER_URL, ROLES} from 'external-app'
 import {ExternalIntegrationComponent} from './external-integration.component';
 
 @NgModule({
     imports: [
         ToolboxSharedModule,
-        HeaderModule,
+        SampleModule,
         RouterModule.forRoot(
             [
                 {
@@ -33,6 +33,10 @@ import {ExternalIntegrationComponent} from './external-integration.component';
     providers: [
         {
             provide: SERVER_URL,
+            useValue: 'override_api_url'
+        },
+        {
+            provide: ROLES,
             useValue: 'override_api_url'
         }
     ],

@@ -1,8 +1,10 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {AppComponent} from './app.component';
-import {HeaderModule} from './modules/sample-component/sample.module';
-import {SERVER_URL} from './modules/sample-component/sample.config';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { SampleModule } from './modules/sample-component/sample.module';
+import { SERVER_URL } from './modules/sample-component/sample.config';
+import { ROLES } from './modules/sample-component/sample.config';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,12 +12,17 @@ import {SERVER_URL} from './modules/sample-component/sample.config';
   ],
   imports: [
     BrowserModule,
-    HeaderModule
+    SampleModule,
+    HttpClientModule
   ],
   providers: [
     {
       provide: SERVER_URL,
-      useValue: 'internal_api_url'
+      useValue: 'http://localhost:3000'
+    },
+    {
+      provide: ROLES,
+      useValue: ['ROLE_ADMIN', 'ROLE_USER']
     }
   ],
   bootstrap: [AppComponent]
