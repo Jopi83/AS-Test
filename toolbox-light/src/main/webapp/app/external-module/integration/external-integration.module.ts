@@ -37,7 +37,7 @@ import {ExternalIntegrationComponent} from './external-integration.component';
         },
         {
             provide: ROLES,
-            useValue: 'override_api_url'
+            useValue: ['ROLE_USER']
         }
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
