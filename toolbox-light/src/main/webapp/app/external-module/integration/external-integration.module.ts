@@ -1,10 +1,10 @@
-import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import {ToolboxSharedModule} from '../../shared';
+import { ToolboxSharedModule } from '../../shared';
 
-import {SampleModule, SERVER_URL, ROLES} from 'external-app'
-import {ExternalIntegrationComponent} from './external-integration.component';
+import { SampleModule, SERVER_URL } from 'external-app'
+import { ExternalIntegrationComponent } from './external-integration.component';
 
 @NgModule({
     imports: [
@@ -34,10 +34,6 @@ import {ExternalIntegrationComponent} from './external-integration.component';
         {
             provide: SERVER_URL,
             useValue: 'override_api_url'
-        },
-        {
-            provide: ROLES,
-            useValue: ['ROLE_USER']
         }
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
