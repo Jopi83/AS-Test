@@ -4,8 +4,6 @@ This sample project exports a module that can be integrated into the *AdSolution
 
 ## Prerequisites
 
-###Frontend
-
 1. Everything that your module exports **must** be defined in the **index.ts** file.
 2. Any service that retrieves data from a backend **must** expose the common base URL 
 (in this example *SERVER_URL*). This is necessary for later production deployment.
@@ -13,17 +11,6 @@ This sample project exports a module that can be integrated into the *AdSolution
 point in the *AdSolutions Toolbox*.
 4. Your application **should** use the same dependencies and versions as the Toolbox 
 to have a consistent user experience.
-
-###Backend
-
-The backend of your application must provide a health endpoint that delivers content with
-**Content-Type**  of **application/json** with the structure:
-
-```javascript
-{
-    "status": "UP"
-}
-```
 
 ## Build instructions
 
