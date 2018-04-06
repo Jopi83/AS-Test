@@ -9,7 +9,6 @@ import { ToolboxSharedModule } from './shared';
 import { ToolboxAppRoutingModule} from './app-routing.module';
 import { ToolboxHomeModule } from './home/home.module';
 
-import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -43,7 +42,6 @@ import {ToolboxExternalModule} from './external-module/external.module';
         FooterComponent
     ],
     providers: [
-        customHttpProvider(),
         PaginationConfig
     ],
     bootstrap: [ JhiMainComponent ]

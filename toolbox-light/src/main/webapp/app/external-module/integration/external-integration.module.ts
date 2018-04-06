@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { ToolboxSharedModule } from '../../shared';
 
-import { SampleModule, SERVER_URL } from 'external-app'
+import { SampleModule, SERVER_URL } from 'external-app';
 import { ExternalIntegrationComponent } from './external-integration.component';
 
 @NgModule({
