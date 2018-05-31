@@ -35,7 +35,7 @@
     "swagger-ui": "2.2.10",
     "tether": "1.4.0",
     "zone.js": "0.8.19",
-    "external-app": "./external-modules/external-app-1.0.4.tgz"
+    "external-app": "./external-modules/external-app-1.0.5.tgz"
   },
   "devDependencies": {
     "@angular/cli": "1.6.6",

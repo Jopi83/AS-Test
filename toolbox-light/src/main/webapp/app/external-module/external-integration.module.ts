@@ -1,15 +1,14 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ToolboxSharedModule } from '../../shared';
+import { ToolboxSharedModule } from '../shared';
 
-import { SampleModule, SERVER_URL } from 'external-app';
 import { ExternalIntegrationComponent } from './external-integration.component';
+import { SampleComponent, SampleService, SERVER_URL } from 'external-app';
 
 @NgModule({
     imports: [
         ToolboxSharedModule,
-        SampleModule,
         RouterModule.forRoot(
             [
                 {
@@ -25,7 +24,8 @@ import { ExternalIntegrationComponent } from './external-integration.component';
         )
     ],
     declarations: [
-        ExternalIntegrationComponent
+        ExternalIntegrationComponent,
+        SampleComponent
     ],
     entryComponents: [
         ExternalIntegrationComponent
@@ -34,7 +34,8 @@ import { ExternalIntegrationComponent } from './external-integration.component';
         {
             provide: SERVER_URL,
             useValue: 'override_api_url'
-        }
+        },
+        SampleService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -2834,9 +2834,9 @@ extend@^3.0.0, extend@~3.0.0, extend@~3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
-external-app@./external-modules/external-app-1.0.4.tgz:
-  version "1.0.4"
-  resolved "./external-modules/external-app-1.0.4.tgz#5ecdf817307b380687e87a651ee22aa5fe55079b"
+external-app@./external-modules/external-app-1.0.5.tgz:
+  version "1.0.5"
+  resolved "./external-modules/external-app-1.0.5.tgz#f6fe70194d8002d06461a147d673e75194a40113"
   dependencies:
     "@angular/animations" "5.2.0"
     "@angular/common" "5.2.0"

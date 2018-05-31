@@ -20,7 +20,7 @@ import {
     ActiveMenuDirective,
     ErrorComponent
 } from './layouts';
-import {ToolboxExternalModule} from './external-module/external.module';
+import { ToolboxExternalIntegrationModule } from './external-module';
 
 @NgModule({
     imports: [
@@ -31,7 +31,7 @@ import {ToolboxExternalModule} from './external-module/external.module';
         ToolboxHomeModule,
         BrowserModule,
         BrowserAnimationsModule,
-        ToolboxExternalModule
+        ToolboxExternalIntegrationModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
