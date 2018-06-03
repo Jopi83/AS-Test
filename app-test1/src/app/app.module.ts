@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { SERVER_URL } from './modules/appsegmenter-component/appsegmenter.config';
+import { SERVER_URL } from './modules/sample-component/sample.config';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AppsegmenterService } from './modules/appsegmenter-component/appsegmenter.service';
-import { AppsegmenterComponent } from './modules/appsegmenter-component/appsegmenter.component';
+import { SampleService } from './modules/sample-component/sample.service';
+import { SampleComponent } from './modules/sample-component/sample.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppsegmenterComponent
+    SampleComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +22,7 @@ import { AppsegmenterComponent } from './modules/appsegmenter-component/appsegme
       provide: SERVER_URL,
       useValue: 'http://localhost:3000'
     },
-    AppsegmenterService
+    SampleService
   ],
   bootstrap: [AppComponent]
 })
