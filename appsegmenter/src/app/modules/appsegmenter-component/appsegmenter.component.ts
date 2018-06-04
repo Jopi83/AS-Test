@@ -13,23 +13,28 @@ export class AppsegmenterComponent implements OnInit {
   private data: String;
   private idtypes = ['idfa', 'aaid'];
   private times = [['delete', -1], ['1 Tag', 1440]];
-  private model = new Segmentprofil("000","idfa",[{id: 123, time: 1440}, {id: 124, time: -1}]);
-  
+  private model = new Segmentprofil("000","idfa",[{'id': 123, 'time': 1440}]);
+  submitted = false;
+
   constructor(private sampleService: AppsegmenterService) {
     // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
   }
   
-  onSubmit() { console.log('submit jedrückt');}
+  onSubmit() { 
+    this.submitted = true; 
+    console.log('submit jedrückt');
+  }
+  // onSubmit() { console.log('submit jedrückt');}
   
   get diagnostic() { return JSON.stringify(this.model); }
   
   ngOnInit() {
-      this.apiUrl = this.sampleService.getApiUrl();
+      /* this.apiUrl = this.sampleService.getApiUrl();
       this.sampleService.fetchDataFromBackend().subscribe(
         (response) => {
           this.data = response.status;
         }
-      );
+      );*/
   }
 
 }
