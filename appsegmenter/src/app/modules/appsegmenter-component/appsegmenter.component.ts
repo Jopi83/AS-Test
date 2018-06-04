@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppsegmenterService } from './appsegmenter.service';
+import { Segmentprofil }    from './segmentprofil';
 
 @Component({
   selector: 'app-appsegmenter',
@@ -10,10 +11,18 @@ export class AppsegmenterComponent implements OnInit {
 
   private apiUrl: String;
   private data: String;
-
+  private idtypes = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
+  private times = [['delete', -1], ['1 Tag', 1440]];
+  private model = new Segmentprofil("000","idfa",[{id: 123, time: 1440}, {id: 124, time: -1}]);
+  
   constructor(private sampleService: AppsegmenterService) {
+    // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
   }
-
+  
+  onSubmit() { console.log('submit jedrückt');}
+  
+  get diagnostic() { return JSON.stringify(this.model); }
+  
   ngOnInit() {
       this.apiUrl = this.sampleService.getApiUrl();
       this.sampleService.fetchDataFromBackend().subscribe(
