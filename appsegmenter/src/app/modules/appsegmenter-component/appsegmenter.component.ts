@@ -32,6 +32,8 @@ export class AppsegmenterComponent implements OnInit {
   deleteSegment(segment:Segment){
     //this.model.segmente.remove(segment);
     console.log('deleteSegment jedrückt');
+    this.model.segmente.splice(this.model.segmente.indexOf(segment), 1); 
+    console.log(this.model.segmente.indexOf(segment));
   }
   // onSubmit() { console.log('submit jedrückt');}
   
