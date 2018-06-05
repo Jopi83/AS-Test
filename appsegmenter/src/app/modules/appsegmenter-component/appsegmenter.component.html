@@ -4,7 +4,7 @@
        AAID/IDFA eintragen und Segmente setzen. 
        </div><p> 
        {{diagnostic}}
-       <form (ngSubmit)="onSubmit()" #segmentprofilForm="ngForm">
+       <form #segmentprofilForm="ngForm">
          <div class="form-group">
            <label for="sid">Device Id</label>
            <input type="text" class="form-control" id="sid" name="sid" required [(ngModel)]="model.sid">
@@ -20,15 +20,16 @@
 		 <div class="form-group" ngControlGroup="people">
 		 	<label for="power">Segmente</label>
  			<div class="form-group" *ngFor="let segment of model.segmente" id="segmente">
- 			<label for="name">Segment Id</label>
-           <input type="text" class="form-control" id="{{segment.id}}" name="{{segment.id}}" name= required [(ngModel)]="segment.id">
+ 			<label for="name">Segment</label><button (click)="deleteSegment(segment)">-</button>
+           <input type="number" class="form-control" id="segment.id" name="segment.id" required [(ngModel)]="segment.id">
  			<select class="form-control"  id="segment.time"
         	 required
          		[(ngModel)]="segment.time" name="time">
    				<option *ngFor="let time of times" [value]="time[1]">{{time[0]}}  </option>
  			</select>
  			</div>
+ 			<div>Add Segment <button (click)="addSegment()">+</button></div>
 		 </div>
-         <button type="submit" class="btn btn-success">Submit</button>
+         <button (click)="onSubmit()" type="submit" class="btn btn-success">Submit</button>
        </form>
    </div>

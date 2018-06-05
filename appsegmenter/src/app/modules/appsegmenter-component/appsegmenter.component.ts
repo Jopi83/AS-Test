@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppsegmenterService } from './appsegmenter.service';
 import { Segmentprofil }    from './segmentprofil';
+import { Segment }    from './segment';
 
 @Component({
   selector: 'app-appsegmenter',
@@ -13,7 +14,7 @@ export class AppsegmenterComponent implements OnInit {
   private data: String;
   private idtypes = ['idfa', 'aaid'];
   private times = [['delete', -1], ['1 Tag', 1440]];
-  private model = new Segmentprofil("000","idfa",[{'id': 123, 'time': 1440}]);
+  private model = new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
   submitted = false;
 
   constructor(private sampleService: AppsegmenterService) {
@@ -23,6 +24,14 @@ export class AppsegmenterComponent implements OnInit {
   onSubmit() { 
     this.submitted = true; 
     console.log('submit jedrückt');
+  }
+  addSegment(){
+    this.model.segmente.push(new Segment(123,1440));
+    console.log('addSegment jedrückt');
+  }
+  deleteSegment(segment:Segment){
+    //this.model.segmente.remove(segment);
+    console.log('deleteSegment jedrückt');
   }
   // onSubmit() { console.log('submit jedrückt');}
   
