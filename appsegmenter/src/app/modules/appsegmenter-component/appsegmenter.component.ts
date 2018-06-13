@@ -24,6 +24,7 @@ export class AppsegmenterComponent implements OnInit {
   onSubmit() { 
     this.submitted = true; 
     console.log('submit jedrückt');
+    console.log(this.sampleService.getApiUrl());
   }
   addSegment(){
     this.model.segmente.push(new Segment(123,1440));

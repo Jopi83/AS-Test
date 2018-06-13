@@ -20,7 +20,7 @@ import { AppsegmenterComponent } from './modules/appsegmenter-component/appsegme
   providers: [
     {
       provide: SERVER_URL,
-      useValue: 'http://localhost:3000'
+      useValue: 'https://adtechnology.axelspringer.com/node/tools/segmenter'
     },
     AppsegmenterService
   ],
