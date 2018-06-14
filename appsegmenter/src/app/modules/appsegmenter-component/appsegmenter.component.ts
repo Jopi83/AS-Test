@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppsegmenterService } from './appsegmenter.service';
 import { Segmentprofil }    from './segmentprofil';
 import { Segment }    from './segment';
@@ -17,7 +18,7 @@ export class AppsegmenterComponent implements OnInit {
   private model = new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
   submitted = false;
 
-  constructor(private sampleService: AppsegmenterService) {
+  constructor(private http: HttpClient, private sampleService: AppsegmenterService) {
     // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
   }
   
@@ -25,6 +26,20 @@ export class AppsegmenterComponent implements OnInit {
     this.submitted = true; 
     console.log('submit jedrückt');
     console.log(this.sampleService.getApiUrl());
+    const header = new HttpHeaders()
+      .set('Content-Type', 'application/json');
+    
+    this.http.get(this.sampleService.getApiUrl()+'')
+    .subscribe(data => {
+      //console.log("authenticated: " + data["authenticated"]);
+      console.log(JSON.stringify(data));
+      });
+     
+     this.http.post(this.sampleService.getApiUrl() + '', this.model, {headers: header})
+       .subscribe(data => {
+      //console.log("authenticated: " + data["authenticated"]);
+      console.log(JSON.stringify(data));
+      });
   }
   addSegment(){
     this.model.segmente.push(new Segment(123,1440));
