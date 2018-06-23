@@ -13,7 +13,7 @@ export class AppsegmenterComponent implements OnInit {
 
   private apiUrl: String;
   private data: String;
-  private idtypes = ['idfa', 'aaid'];
+  private idtypes = ['idfa', 'aaid','uuid'];
   private times = [['delete', -1], ['1 Tag', 1440]];
   private model = new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
   submitted = false;
