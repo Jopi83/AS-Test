@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class AppsegmenterService {
+export class SegUploadStatusService {
   constructor(@Inject(SERVER_URL) private config: String,
               private http: HttpClient) {
   }
