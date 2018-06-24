@@ -10,7 +10,7 @@ import { SegUploadStatusService } from './SegUploadStatus.service';
 export class SegUploadStatusComponent implements OnInit {
 
   private apiUrl: String;
-  private data: String;
+  private data = "initTest";
   private model = {};//new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
   //submitted = false;
 
@@ -49,13 +49,13 @@ export class SegUploadStatusComponent implements OnInit {
   }
   // onSubmit() { console.log('submit jedrückt');}
   */
-  get diagnostic() { return this.data; }
+  get diagnostic() { return JSON.stringify(this.data); }
   
   ngOnInit() {
       this.apiUrl = this.segUpStatService.getApiUrl();
-      this.sampleService.getSegUpStat().subscribe(
+      this.segUpStatService.getSegUpStat().subscribe(
         (response) => {
-          this.data = response.body;
+          this.data = response;
         }
       );
   }

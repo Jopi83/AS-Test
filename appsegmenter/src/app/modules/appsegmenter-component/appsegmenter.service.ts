@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { SERVER_URL } from './appsegmenter.config';
+import { SERVER_URL } from './../segmenter.config';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
