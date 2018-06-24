@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SegUploadStatusService } from './SegUploadStatus.service';
-import { Segmentprofil }    from './segmentprofil';
-import { Segment }    from './segment';
 
 @Component({
-  selector: 'app-appsegmenter',
-  templateUrl: './appsegmenter.component.html',
-  styleUrls: ['./appsegmenter.component.css']
+  selector: 'app-segmenter-SegUploadStatus',
+  templateUrl: './SegUploadStatus.component.html',
+  styleUrls: ['./SegUploadStatus.component.css']
 })
 export class SegUploadStatusComponent implements OnInit {
 
   private apiUrl: String;
   private data: String;
-  private idtypes = ['idfa', 'aaid','uuid'];
-  private times = [['delete', -1], ['1 Tag', 1440]];
-  private model = new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
-  submitted = false;
+  private model = {};//new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
+  //submitted = false;
 
-  constructor(private http: HttpClient, private sampleService: SegUploadStatusService) {
+  constructor(private http: HttpClient, private segUpStatService: SegUploadStatusService) {
     // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
   }
-  
+  /*
   onSubmit() { 
     this.submitted = true; 
     console.log('submit jedrückt');
@@ -52,16 +48,16 @@ export class SegUploadStatusComponent implements OnInit {
     console.log(this.model.segmente.indexOf(segment));
   }
   // onSubmit() { console.log('submit jedrückt');}
-  
-  get diagnostic() { return JSON.stringify(this.model); }
+  */
+  get diagnostic() { return this.data; }
   
   ngOnInit() {
-      /* this.apiUrl = this.sampleService.getApiUrl();
-      this.sampleService.fetchDataFromBackend().subscribe(
+      this.apiUrl = this.segUpStatService.getApiUrl();
+      this.sampleService.getSegUpStat().subscribe(
         (response) => {
-          this.data = response.status;
+          this.data = response.body;
         }
-      );*/
+      );
   }
 
 }

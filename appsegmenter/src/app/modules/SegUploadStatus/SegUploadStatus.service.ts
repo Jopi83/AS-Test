@@ -12,4 +12,7 @@ export class SegUploadStatusService {
   getApiUrl(): String {
     return this.config;
   }
+  getSegUpStat(): Observable<any> {
+  this.http.get(this.config);
+  }
 }
