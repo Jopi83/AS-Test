@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { SERVER_URL } from './modules/sample-component/sample.config';
+import { SERVER_URL } from './modules/adnxsObjSelector.config';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { SampleService } from './modules/sample-component/sample.service';
-import { SampleComponent } from './modules/sample-component/sample.component';
+import { AdnxsObjSelectorService } from './modules/adnxsObjSelector/adnxsObjSelector.service';
+import { AdnxsObjSelectorComponent } from './modules/adnxsObjSelector/adnxsObjSelector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SampleComponent
+    AdnxsObjSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +20,9 @@ import { SampleComponent } from './modules/sample-component/sample.component';
   providers: [
     {
       provide: SERVER_URL,
-      useValue: 'http://localhost:3000'
+      useValue: 'https://adtechnology.axelspringer.com'
     },
-    SampleService
+    AdnxsObjSelectorService
   ],
   bootstrap: [AppComponent]
 })
