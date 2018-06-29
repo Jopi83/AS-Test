@@ -64,6 +64,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
       this.adnxsObjSelectorService.getData(this.type).subscribe(
         (response) => {
           this.data = response.results;
+          console.log(JSON.stringify(this.data));
         }
       );
   }

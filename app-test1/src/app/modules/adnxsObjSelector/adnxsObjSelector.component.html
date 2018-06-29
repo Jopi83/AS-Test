@@ -1,8 +1,8 @@
    <div class="container">
-       <input class="form-control"  id="{{id}}"
+       <input class="form-control"  [attr.list]=id
          		[(ngModel)]="selectedObj" name="idtype" value="{{selectedObj ? selectedObj.name : ''}}">
-   		<datalist id="adnxObj">
-   		<option *ngFor="let dat of data" [ngValue]="dat">{{dat.name}}({{dat.id}})</option>
+   		<datalist id="{{id}}">
+   		<option *ngFor="let dat of data" [ngValue]="dat">{{dat.name}}</option>
 		</datalist>
 		Name: {{selectedObj ? selectedObj.name : ''}} :
        ::: {{diagnostic}} :::
