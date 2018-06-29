@@ -13,6 +13,7 @@ export class AdnxsObjSelectorService {
     return this.config;
   }
   getData(type:String): Observable<any> {
+    console.log("Service getData type :"+type+": ");
   return this.http.get(this.config+'/node/services/lookup?type='+type);
   }
 }
