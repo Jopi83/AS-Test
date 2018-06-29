@@ -1,7 +1,7 @@
    <div class="container">
-       <input class="form-control"  [attr.list]=id
+       <input class="form-control"  [attr.list]=myid
          		[(ngModel)]="selectedObj" name="idtype" value="{{selectedObj ? selectedObj.name : ''}}">
-   		<datalist id="{{id}}">
+   		<datalist id="{{myid}}">
    		<option *ngFor="let dat of data" [ngValue]="dat">{{dat.name}}</option>
 		</datalist>
 		Name: {{selectedObj ? selectedObj.name : ''}} :

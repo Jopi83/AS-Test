@@ -17,7 +17,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
   private model = {};//new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
   //submitted = false;
   @Input() type: string;
-  @Input() id:string;
+  @Input() myid:string;
 
   constructor(private http: HttpClient, private adnxsObjSelectorService: AdnxsObjSelectorService) {
     // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
