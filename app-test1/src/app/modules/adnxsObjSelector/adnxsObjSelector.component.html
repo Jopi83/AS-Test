@@ -4,7 +4,7 @@
    		<datalist id="{{myid}}">
    		<option *ngFor="let dat of data" [ngValue]="dat">{{dat.name}}</option>
 		</datalist>
-		Name: {{myselectedObj ? myselectedObj.name : ''}} :
+		Name: {{myselectedObj ? myselectedObj.name : 'NOTSET'}} :
        <!--::: {{diagnostic}} :::-->
 
    </div>

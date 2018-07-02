@@ -18,7 +18,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
   //submitted = false;
   @Input() type: string;
   @Input() myid:string;
-  @Input()
+  /*@Input()
   get selectedObj() {
     return this.myselectedObj;
   }
@@ -28,7 +28,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
     this.selectedChange.emit(this.myselectedObj);
   }
   @Output() selectedChange = new EventEmitter();
-
+*/
   constructor(private http: HttpClient, private adnxsObjSelectorService: AdnxsObjSelectorService) {
     // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
   }
@@ -64,7 +64,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
   }
   // onSubmit() { console.log('submit jedrückt');}
   */
-  get diagnostic() { return JSON.stringify(this.selectedObj)+JSON.stringify(this.data); }
+  get diagnostic() { return JSON.stringify(this.myselectedObj)+JSON.stringify(this.data); }
 
   ngOnInit() {
        console.log("NGinit type :"+this.type+": ");
