@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  publisher = {};
+
+  get diagnostic() { return JSON.stringify(this.publisher); }
+
 }

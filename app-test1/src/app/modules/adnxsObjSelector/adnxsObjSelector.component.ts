@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AdnxsObjSelectorService } from './adnxsObjSelector.service';
 import { AdnxsObj }    from './adnxsObj';
@@ -13,11 +13,21 @@ export class AdnxsObjSelectorComponent implements OnInit {
   private apiUrl: String;
   private data:Array<AdnxsObj>;//"initTest";
   private options:Array<AdnxsObj>;
-  private selectedObj:{};
+  private myselectedObj:{};
   private model = {};//new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
   //submitted = false;
   @Input() type: string;
   @Input() myid:string;
+  @Input()
+  get selectedObj() {
+    return this.myselectedObj;
+  }
+
+  set selectedObj(val) {
+    this.myselectedObj = val;
+    this.selectedChange.emit(this.myselectedObj);
+  }
+  @Output() selectedChange = new EventEmitter();
 
   constructor(private http: HttpClient, private adnxsObjSelectorService: AdnxsObjSelectorService) {
     // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
