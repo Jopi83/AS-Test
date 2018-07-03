@@ -6,11 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdnxsObjSelectorService } from './modules/adnxsObjSelector/adnxsObjSelector.service';
 import { AdnxsObjSelectorComponent } from './modules/adnxsObjSelector/adnxsObjSelector.component';
+import { TestCountrySelector } from './modules/TestCountrySelector/TestCountrySelector.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdnxsObjSelectorComponent
+    AdnxsObjSelectorComponent,
+    TestCountrySelector
   ],
   imports: [
     BrowserModule,

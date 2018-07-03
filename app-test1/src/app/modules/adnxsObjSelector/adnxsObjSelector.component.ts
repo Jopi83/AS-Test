@@ -68,7 +68,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
   }
   // onSubmit() { console.log('submit jedrückt');}
   */
-  get diagnostic() { return JSON.stringify(this.selectedObj)+"|||"+JSON.stringify(this.data); }
+  get diagnostic() { return JSON.stringify(this.selectedObj)+"|   |   |"; }
 
   ngOnInit() {
        console.log("NGinit type :"+this.type+": ");

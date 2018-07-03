@@ -1,0 +1,10 @@
+<div class="typeHead">
+  <input list="countries" [(ngModel)]='selected'  [attr.value]="selected.name"/>{{selected.name}}
+  <datalist id="countries">
+    <select>
+      <option *ngFor="let c of countrylist" [ngValue]="c">{{c.name}}</option>
+    </select>
+  </datalist>
+  <button type="button" (click)="test()" value="value">Test</button>
+</div>
+<!--  -->
