@@ -19,6 +19,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
   @Input() type: string;
   @Input() myid:string;
   /*@Input()
+  //[(selectedObj)]="publisher"
   get selectedObj() {
     return this.myselectedObj;
   }
