@@ -1,5 +1,5 @@
 <div class="typeHead">
-  <input list="countries" [(ngModel)]='selected'  [attr.value]="selected.name"/>{{selected.name}}
+  <input list="countries" [(ngModel)]='selected'/>
   <datalist id="countries">
       <option *ngFor="let c of countrylist" [ngValue]="c">{{c.name}}</option>
   </datalist>

@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class TestCountrySelector {
   countrylist: any[];
-  selected = {};
+  selectedO = {};
 
   ngOnInit() {
-    this.selected = { "name": "Afghanistan", "code": "AF" };
-    this.countrylist = [
+   this.countrylist = [
       { "name": "Afghanistan", "code": "AF" },
       { "name": "Åland Islands", "code": "AX" },
       { "name": "Albania", "code": "AL" },
@@ -32,9 +31,11 @@ export class TestCountrySelector {
       { "name": "Bahrain", "code": "BH" },
       { "name": "Bangladesh", "code": "BD" },
       { "name": "Barbados", "code": "BB" }
-    ]
+    ];
+    this.selectedO = this.countrylist;
+
   }
   test() {
-    console.log(JSON.stringify(this.selected));
+    console.log(JSON.stringify(this.selectedO));
   }
 }
