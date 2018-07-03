@@ -1,10 +1,11 @@
    <div class="container">
-       <input class="form-control"  [attr.list]=myid
-         		[(ngModel)]="myselectedObj" name="idtype" value="{{myselectedObj ? myselectedObj.name : ''}}">
-   		<datalist id="{{myid}}">
-   		<option *ngFor="let dat of data" [ngValue]="dat">{{dat.name}}</option>
-		</datalist>
-		Name: {{myselectedObj ? myselectedObj.name : 'NOTSET'}} :
-       ::: {{diagnostic}} :::
+     <input class="form-control"  [attr.list]="myid"	[(ngModel)]="selectedObj">
+      <datalist [attr.id]="myid">
+   		  <option *ngFor="let dat of data" [ngValue]="dat" >{{dat.name}}</option>
+		  </datalist>
+     selectedObj: {{selectedObj ? selectedObj.name : 'NOTSET'}} :
+     selectedObj: {{selectedObj}} :
 
+       ::: {{diagnostic}} :::
+<!-- value="{{selectedObj ? selectedObj.name : ''}}" value="{{selectedObj ? selectedObj.name : ''}}" value="{{dat.name}}"-->
    </div>

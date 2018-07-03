@@ -12,23 +12,26 @@ export class AdnxsObjSelectorComponent implements OnInit {
 
   private apiUrl: String;
   private data:Array<AdnxsObj>;//"initTest";
-  private options:Array<AdnxsObj>;
-  private myselectedObj:{};
-  private model = {};//new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
+  //private options:Array<AdnxsObj>;
+  //private selectedObj:AdnxsObj;
+  private selectedObj = {"member_id":7823,"code":null,"name":"Default Real Time","id":994151,"state":"active","last_modified":"2017-11-30 20:34:10"};
+  //private model = {};//new Segmentprofil("","idfa",[new Segment(123, 1440), new Segment(124, 1440)]);
   //submitted = false;
   @Input() type: string;
   @Input() myid:string;
-  /*@Input()
+  //@Input()
   //[(selectedObj)]="publisher"
-  get selectedObj() {
-    return this.myselectedObj;
+  /*
+  get myselectedObj() {
+    //console.log(JSON.stringify(this.myselectedObj));
+    return this.selectedObj;
   }
 
-  set selectedObj(val) {
-    this.myselectedObj = val;
-    this.selectedChange.emit(this.myselectedObj);
+  set myselectedObj(val) {
+    this.selectedObj = val;
+    console.log(JSON.stringify(this.selectedObj));//this.selectedChange.emit(this.myselectedObj);
   }
-  @Output() selectedChange = new EventEmitter();
+  //@Output() selectedChange = new EventEmitter();
 */
   constructor(private http: HttpClient, private adnxsObjSelectorService: AdnxsObjSelectorService) {
     // this.idtype = ['idfa', 'aaid', 'sha1udid', 'md5udid', 'sha1mac', 'openudid', 'windowsadid'];
@@ -65,7 +68,7 @@ export class AdnxsObjSelectorComponent implements OnInit {
   }
   // onSubmit() { console.log('submit jedrückt');}
   */
-  get diagnostic() { return JSON.stringify(this.myselectedObj)+JSON.stringify(this.data); }
+  get diagnostic() { return JSON.stringify(this.selectedObj)+"|||"+JSON.stringify(this.data); }
 
   ngOnInit() {
        console.log("NGinit type :"+this.type+": ");
