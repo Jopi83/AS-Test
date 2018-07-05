@@ -13,18 +13,18 @@
  			<select class="form-control"  id="idtype"
         	 required
          		[(ngModel)]="model.idtype" name="idtype">
-   				<option *ngFor="let idt of idtypes" [value]="idt">{{idt}}</option>
+   				<option *ngFor="let idt of idtypes" [ngValue]="idt">{{idt}}</option>
  			</select>
 		 </div>
 		 <div class="form-group" ngControlGroup="people">
 		 	<label for="power">Segmente</label>
  			<div class="form-group" *ngFor="let segment of model.segmente" id="segmente">
  			<label for="name">Segment</label><button (click)="deleteSegment(segment)">-</button>
-           <input type="number" class="form-control" id="segment.id" name="segment.id" required [(ngModel)]="segment.id">
- 			<select class="form-control"  id="segment.time"
+           <input type="number" class="form-control" name="segment.id" required [(ngModel)]="segment.id">
+ 			<select class="form-control"
         	 required
          		[(ngModel)]="segment.time" name="time">
-   				<option *ngFor="let time of times" [value]="time[1]">{{time[0]}}  </option>
+   				<option *ngFor="let time of times" [ngValue]="time[1]">{{time[0]}}  </option>
  			</select>
  			</div>
  			<div>Add Segment <button (click)="addSegment()">+</button></div>
