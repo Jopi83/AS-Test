@@ -14,7 +14,7 @@ export class AppsegmenterComponent implements OnInit {
   private apiUrl: String;
   private data: String;
   private idtypes = ['idfa', 'aaid','uuid'];
-  private times = [['delete', -1], ['1 Tag', 1440]];
+  private times = [['delete', -1], ['1 Tag', 1440],['90 Tage', 129600]];
   private model = new Segmentprofil("","idfa",[new Segment(123, 1440)]);
   submitted = false;
 
